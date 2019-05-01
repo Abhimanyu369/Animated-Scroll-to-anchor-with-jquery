@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scroll to Anchor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="options">
+      <ul class="option-list">
+        <li class="option-list-item"><a class="option-list-link" href="#detail_1">Option 1</a></li>
+        <li class="option-list-item"><a class="option-list-link" href="#detail_2">Option 2</a></li>
+        <li class="option-list-item"><a class="option-list-link" href="#detail_3">Option 3</a></li>
+        <li class="option-list-item"><a class="option-list-link" href="#detail_4">Option 4</a></li>
+      </ul>
+    </div>
+    <div class="details">
+      <div class="detail-box" id="detail_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quas, quia voluptas sed vel, nemo veritatis earum exercitationem maiores expedita.</div>
+      <div class="detail-box" id="detail_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum reprehenderit consequuntur impedit, sapiente nobis porro sint quidem cupiditate dolorum aliquid?</div>
+      <div class="detail-box" id="detail_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus cum assumenda ipsam excepturi placeat nobis illo aliquam magni accusamus id.</div>
+      <div class="detail-box" id="detail_4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quae maxime velit rem ex quia dolore perspiciatis, alias? Numquam, beatae.</div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $( "a.option-list-link" ).click(function( event ) {
+          event.preventDefault();
+          $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
+      });
+  });
+  </script>
+</body>
+</html>
